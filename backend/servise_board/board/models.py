@@ -5,6 +5,9 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
+    CLIENT = 0
+    CONTRACTOR = 1
+    ROLE_CHOICES = ((CLIENT, 'Заказчик'), (CONTRACTOR, 'Специалист'))
     name = models.CharField(max_length=100, verbose_name='Имя')
     surname = models.CharField(max_length=100, verbose_name='Фамилия')
     patronimic = models.CharField(max_length=100, blank=True, null=True, verbose_name='Отчество')
@@ -13,6 +16,7 @@ class User(AbstractUser):
     about = models.TextField(blank=True, null=True, verbose_name='О себе')
     city = models.CharField(max_length=200, verbose_name='Город')
     avatar = models.ImageField(upload_to='avatars/', verbose_name='Фото')
+    role = models.IntegerField(choices=ROLE_CHOICES, default=0, verbose_name='Роль')
 
     class Meta:
         permissions = ()
@@ -27,13 +31,6 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
-
-
-class Contractor(User):
-    categories = models.ManyToManyField(Category)
-
-    class Meta:
-        permissions = ()
 
 
 class OrderStatus(models.Model):
@@ -87,3 +84,20 @@ class OrderPhoto(Media):
 class OrderVideo(Media):
     file = models.FileField(upload_to='orders/videos/', verbose_name='Видео')
     source = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name='Заказ')
+
+
+class UserReview(models.Model):
+    CHOICES = ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5))
+    title = models.CharField(max_length=200, verbose_name='Заголовок')
+    detail = models.TextField(verbose_name='Описане')
+    rate = models.IntegerField(choices=CHOICES, verbose_name='Оценка')
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='Пользователь')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Отзыв на пользователя'
+        verbose_name_plural = 'Отзывы на пользователей'
+
+
