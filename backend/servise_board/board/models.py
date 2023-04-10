@@ -15,7 +15,7 @@ class User(AbstractUser):
     email = models.EmailField(verbose_name='Почта')
     about = models.TextField(blank=True, null=True, verbose_name='О себе')
     city = models.CharField(max_length=200, verbose_name='Город')
-    avatar = models.ImageField(upload_to='avatars/', verbose_name='Фото')
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True, verbose_name='Фото')
     role = models.IntegerField(choices=ROLE_CHOICES, default=0, verbose_name='Роль')
 
     class Meta:
