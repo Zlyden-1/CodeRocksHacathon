@@ -12,6 +12,7 @@ class User(AbstractUser):
     email = models.EmailField(verbose_name='Почта')
     about = models.TextField(blank=True, null=True, verbose_name='О себе')
     city = models.CharField(max_length=200, verbose_name='Город')
+    avatar = models.ImageField(upload_to='avatars/', verbose_name='Фото')
 
     class Meta:
         permissions = ()
@@ -65,9 +66,9 @@ class Order(models.Model):
         verbose_name_plural = 'Заказы'
 
 
-class OrderPhoto(models.Model):
-    photo = models.ImageField(upload_to='orders/photos/', verbose_name='Фото')
-    order = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name='Заказчик')
+class Media(models.Model):
+    file: models.ImageField | models.FileField = None
+    source: models.ForeignKey = None
 
     def filename(self):
         return os.path.basename(self.photo.name)
@@ -78,3 +79,11 @@ class OrderPhoto(models.Model):
         super().delete(*args, **kwargs)
 
 
+class OrderPhoto(Media):
+    file = models.ImageField(upload_to='orders/photos/', verbose_name='Фото')
+    source = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name='Заказ')
+
+
+class OrderVideo(Media):
+    file = models.FileField(upload_to='orders/videos/', verbose_name='Видео')
+    source = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name='Заказ')
