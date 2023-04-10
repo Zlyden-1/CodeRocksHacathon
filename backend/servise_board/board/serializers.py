@@ -11,7 +11,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ("name")
+        fields = ("name", "photo")
 
 
 class OrderStatusSerializer(serializers.ModelSerializer):

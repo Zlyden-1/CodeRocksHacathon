@@ -24,6 +24,8 @@ class User(AbstractUser):
 
 class Category(models.Model):
     name = models.CharField(max_length=150, verbose_name='Название')
+    photo = models.ImageField(upload_to='photo/', blank=True, null=True, verbose_name='Фото')
+
 
     def __str__(self):
         return self.name
@@ -46,7 +48,7 @@ class OrderStatus(models.Model):
 
 class Order(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
-    detail = models.TextField(verbose_name='Описане')
+    detail = models.TextField(verbose_name='Описание')
     author = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='Заказчик')
     status = models.ForeignKey(to=OrderStatus, on_delete=models.PROTECT, verbose_name='Статус')
 
@@ -89,7 +91,7 @@ class OrderVideo(Media):
 class UserReview(models.Model):
     CHOICES = ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5))
     title = models.CharField(max_length=200, verbose_name='Заголовок')
-    detail = models.TextField(verbose_name='Описане')
+    detail = models.TextField(verbose_name='Описание')
     rate = models.IntegerField(choices=CHOICES, verbose_name='Оценка')
     user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='Пользователь')
 
