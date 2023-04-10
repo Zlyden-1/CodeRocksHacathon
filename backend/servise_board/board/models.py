@@ -101,3 +101,12 @@ class UserReview(models.Model):
         verbose_name_plural = 'Отзывы на пользователей'
 
 
+class UserReviewPhoto(Media):
+    file = models.ImageField(upload_to='reviews/photos/', verbose_name='Фото')
+    source = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name='Пользователь')
+
+
+class UserReviewVideo(Media):
+    file = models.FileField(upload_to='reviews/videos/', verbose_name='Видео')
+    source = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name='Пользователь')
+
