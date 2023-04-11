@@ -1,0 +1,44 @@
+.wrapper {
+    background: #ececec;
+    flex: 0 0 auto;
+
+    .header {
+        padding: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        gap: 70px;
+        img {
+            width: 160px;
+        }
+    
+        .menu {
+            display: flex;
+            gap: 200px;
+            align-items: flex-end;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+            .leftmenu {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            a {
+                color: rgb(68, 70, 221);
+                font-weight: bold;
+                text-decoration: none;
+                transition: color .2s;
+
+                &:hover {
+                    color: rgb(253, 193, 10);
+                }
+            }
+        }
+    }
+}

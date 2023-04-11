@@ -1,0 +1,35 @@
+.wrapper {
+    background-image: url('./babula.jpg');
+    background-size: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+
+    .imgcontent {
+        padding: 40px 10%;
+
+        .text {
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        .textin {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 5px;
+
+            .input {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                font-weight: 300;
+                border: 0;
+                outline: none;
+                background: #222;
+                color: white;
+                border-radius: 8px;
+            }
+        }
+
+    }
+}
