@@ -1,0 +1,22 @@
+.wrapper {
+    border: 2px #D24C00 solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    .imgcontent{
+        img{
+            width: 75px;
+            height: 75px;
+        }
+    }
+    .textcontent{
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+
+    }
+}

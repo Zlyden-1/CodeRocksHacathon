@@ -1,19 +1,20 @@
 .wrapper {
-    background-image: url('./babula.jpg');
-    background-size: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 500px;
-
+    
     .imgcontent {
         padding: 40px 10%;
-
+        background-image: url('./images/babula.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        height: 300px;
+        margin-bottom: 70px;
         .text {
             font-size: 60px;
             font-weight: 600;
         }
 
         .textin {
+            padding-top: 60px;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -31,5 +32,65 @@
             }
         }
 
+    }
+
+    .textcat {
+        margin-top: 50px;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .wrappercard {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 20px 40px;
+        flex-wrap: wrap;
+    }
+
+    .wrappercardinfo {
+        margin: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        .cardinfo1{
+            border-radius: 35px;
+            width: 200px;
+            height: 200px;
+            background-image: url('./images/1.png');
+            background-size: cover;
+
+        }
+        .cardinfo2{
+            border-radius: 35px;
+            width: 200px;
+            height: 200px;
+            background-image: url('./images/2.png');
+            background-size: cover;
+        }
+        .cardinfo3{
+            border-radius: 35px;
+            width: 300px;
+            height: 200px;
+            background-image: url('./images/3.png');
+            background-size: cover;
+        }
+
+    }
+    .textcardinfo{
+        margin: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+        .cardtext{
+            font-size: 14px;
+            font-weight: 300;
+        }
     }
 }

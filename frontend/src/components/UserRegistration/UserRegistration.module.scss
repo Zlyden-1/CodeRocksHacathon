@@ -1,18 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
 .wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
+    border: 3px #D24C00 solid;
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    .wrapperhead {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        a {
+            color: rgb(0, 0, 0);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color .2s;
+            border: 2px #D24C00 solid;
+            border-radius: 20px;
+            padding: 10px;
+
+            &:hover {
+                color: rgb(253, 193, 10);
+            }
+        }
+    }
+
     .form {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        border: 2px solid #222;
-        border-radius: 8px;
+        gap: 15px;
         justify-content: center;
         align-items: center;
         padding: 50px;
+        justify-content: center;
 
         .component {
             margin: 0 100px;
@@ -22,9 +45,10 @@
             font-size: 15px;
             font-weight: 300;
             border: 0;
+            border-radius: 35px;
             outline: none;
-            background: #222;
-            color: white;
+            background: #FFD4BB;
+            color: #000;
         }
 
     }

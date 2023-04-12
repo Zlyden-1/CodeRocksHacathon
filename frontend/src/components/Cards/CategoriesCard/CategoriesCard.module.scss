@@ -1,0 +1,21 @@
+.wrapper {
+    border-radius: 8px;
+    border: 2px solid #222;
+    width: 250px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    .text {
+        background-color: #fefefe;
+        width: 50%;
+        border-radius: 8px;
+        border: 2px solid #222;
+        align-self: flex-end;
+        text-align: center;
+        
+    }
+
+}

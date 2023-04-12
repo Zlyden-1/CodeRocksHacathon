@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { UserAuthorization } from './components/UserAuthorization/UserAuthorization';
 import { MainPage } from './components/Pages/MainPage/MainPage';
 import { UserRegistration } from './components/UserRegistration/UserRegistration';
+import { ListPerfomance } from './components/Pages/ListPerfomance/ListPerfomance';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<MainPage />}></Route>
         <Route path='/auth' element={<UserAuthorization/>}></Route>
         <Route path='/reg' element={<UserRegistration/>}></Route>
+        <Route path='/listperfomance' element={<ListPerfomance/>}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
