@@ -10,7 +10,7 @@ export const MainPage = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get("https://reqres.in/api/users?page=1").then((response) => {
+        axios.get("http://95.163.240.234:8000/api/categories").then((response) => {
             setUsers(response.data.data);
         });
     }, []);
@@ -20,9 +20,9 @@ export const MainPage = () => {
                 <div className={s.text}>Оставьте все <br />заботы нам</div>
                 <div className={s.textin}>
                     <div>
-                        <input className={s.input} type="text" />
+                        <input type="text" />
                     </div>
-                    <div className={s.input}>Кнопка</div>
+                    <div className={s.input}>Поиск</div>
                 </div>
             </div>
             <div className={s.textcat}>

@@ -1,5 +1,5 @@
 .wrapper {
-    
+
     .imgcontent {
         padding: 40px 10%;
         background-image: url('./images/babula.jpg');
@@ -8,6 +8,7 @@
         background-size: cover;
         height: 300px;
         margin-bottom: 70px;
+
         .text {
             font-size: 60px;
             font-weight: 600;
@@ -19,16 +20,42 @@
             flex-direction: row;
             justify-content: flex-start;
             gap: 5px;
+            height: 30px;
+
+            input {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                padding-left: 10px;
+                font-weight: 300;
+                height: 30px;
+                border: 0;
+                outline: none;
+                background: #ffffff;
+                color: rgb(0, 0, 0);
+                border-radius: 8px;
+            }
 
             .input {
                 font-family: 'Montserrat', sans-serif;
                 font-size: 20px;
                 font-weight: 300;
+                height: 30px;
                 border: 0;
+                text-align: center;
                 outline: none;
-                background: #222;
-                color: white;
+                background: #D24C00;
+                color: #FEFEFE;
                 border-radius: 8px;
+                width: 100px;
+                cursor: pointer;
+                transition: color .2s;
+                text-decoration: none;
+
+                &:hover {
+                    color: rgb(253, 193, 10);
+                    transform: scale(1.05);
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+                }
             }
         }
 
@@ -57,38 +84,48 @@
         flex-direction: row;
         gap: 20px;
         flex-wrap: wrap;
-        .cardinfo1{
-            border-radius: 35px;
-            width: 200px;
+
+        .cardinfo1 {
+            width: 300px;
             height: 200px;
             background-image: url('./images/1.png');
             background-size: cover;
+            background-color: #FFD4BB;
+            border-radius: 30px;
 
         }
-        .cardinfo2{
-            border-radius: 35px;
-            width: 200px;
+
+        .cardinfo2 {
+            width: 300px;
             height: 200px;
             background-image: url('./images/2.png');
-            background-size: cover;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #FFD4BB;
+            border-radius: 30px;
         }
-        .cardinfo3{
-            border-radius: 35px;
+
+        .cardinfo3 {
             width: 300px;
             height: 200px;
             background-image: url('./images/3.png');
             background-size: cover;
+            background-color: #FFD4BB;
+            border-radius: 30px;
         }
 
     }
-    .textcardinfo{
+
+    .textcardinfo {
         margin: 20px;
         display: flex;
         justify-content: space-around;
         flex-direction: row;
         text-align: left;
         gap: 20px;
-        .cardtext{
+
+        .cardtext {
             font-size: 14px;
             font-weight: 300;
         }

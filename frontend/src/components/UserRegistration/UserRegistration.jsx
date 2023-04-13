@@ -32,7 +32,7 @@ export class UserRegistration extends React.Component {
             enterpassword: this.state.enterpassword
         };
 
-        axios.post('http://95.163.240.234:8000/', data)
+        axios.post('http://95.163.240.234:8000/rgstr_user', data)
             .then(response => {
                 console.log(response);
                 // Дальнейшая обработка ответа от сервера

@@ -10,12 +10,12 @@ export const Footer = () => {
                 <div className={s.menu}>
                     <div className={s.leftmenu}>
                         <NavLink to='/'>Новый заказ</NavLink>
-                        <NavLink to='https://tavolga.center/#b6793'>Все услуги</NavLink>
-                        <NavLink to='/allawards'>История заказов</NavLink>
+                        <NavLink to='/'>Все услуги</NavLink>
+                        <NavLink to='/lk'>История заказов</NavLink>
                     </div>
                     <div className={s.leftmenu}>
-                        <NavLink to='/'>Вход для специалистов</NavLink>
-                        <NavLink to='https://tavolga.center/#b6793'>Вход для исполнителей</NavLink>
+                        <NavLink to='/auth'>Вход для специалистов</NavLink>
+                        <NavLink to='/auth'>Вход для исполнителей</NavLink>
                     </div>
                     <div className={s.leftmenu}>
                         <div>Служба поддержки</div>

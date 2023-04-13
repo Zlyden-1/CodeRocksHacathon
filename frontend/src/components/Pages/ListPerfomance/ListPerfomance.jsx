@@ -8,19 +8,15 @@ export const ListPerfomance = () => {
         <div className={s.wrapper}>
             <div className={s.search}>
                 <div>
-                    <input className={s.input} type="text" />
+                    <input type="text" />
                 </div>
-                <div className={s.input}>Кнопка</div>
+                <div className={s.input}>Поиск</div>
             </div>
             <div className={s.categories}>
                 <NavLink to='/'>Все услуги</NavLink>
                 <span>Название категории</span>
             </div>
             <div className={s.cards}>
-                <PerfomanceCard />
-                <PerfomanceCard />
-                <PerfomanceCard />
-                <PerfomanceCard />
                 <PerfomanceCard />
             </div>
         </div>

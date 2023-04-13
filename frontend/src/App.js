@@ -5,6 +5,7 @@ import { UserAuthorization } from './components/UserAuthorization/UserAuthorizat
 import { MainPage } from './components/Pages/MainPage/MainPage';
 import { UserRegistration } from './components/UserRegistration/UserRegistration';
 import { ListPerfomance } from './components/Pages/ListPerfomance/ListPerfomance';
+import { PersonalAccount } from './components/Pages/PersonalAccount/PersonalAccount';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/auth' element={<UserAuthorization/>}></Route>
         <Route path='/reg' element={<UserRegistration/>}></Route>
         <Route path='/listperfomance' element={<ListPerfomance/>}></Route>
+        <Route path='/lk' element={<PersonalAccount/>}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
