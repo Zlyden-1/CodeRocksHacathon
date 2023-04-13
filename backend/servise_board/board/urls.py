@@ -4,8 +4,6 @@ from rest_framework.authtoken.views import obtain_auth_token
 from . import views
 
 urlpatterns = [
-    path('api/user/', views.UserView.as_view()),
-    path('api/order/', views.OrderView.as_view()),
     path('api/registrationUser/', views.RegistrationUserView.as_view()),
     path('api/registrationContractor/', views.RegistrationContractorView.as_view()),
     path('token/', obtain_auth_token),

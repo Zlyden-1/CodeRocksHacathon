@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login
 from rest_framework.authtoken.models import Token
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
+from rest_framework.authentication import TokenAuthentication
 
 
 class CategoryList(generics.ListCreateAPIView):
@@ -183,3 +184,13 @@ def register_contractor_view(request):
 #         else:
 #             data = serializer.errors
 #             return Response(data)
+
+
+# class PersonalAccountView(generics.CreateAPIView):
+#     authentication_classes = [TokenAuthentication]
+#     permission_classes = [IsAuthenticated]
+#
+#     def get(self, request):
+#         email = request.user.email
+#         data = {'message': 'Hello, world!'}
+#         return Response(data)
