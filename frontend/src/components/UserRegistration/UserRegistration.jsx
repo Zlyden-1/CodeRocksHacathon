@@ -25,7 +25,6 @@ export class UserRegistration extends React.Component {
             surname: this.state.surname,
             name: this.state.name,
             patronymic: this.state.patronymic,
-            login: this.state.login,
             email: this.state.email,
             telephone: this.state.telephone,
             password: this.state.password,
@@ -54,7 +53,6 @@ export class UserRegistration extends React.Component {
                     <input className={s.component} required placeholder="Фамилия" onChange={(e) => this.setState({ surname: e.target.value })} />
                     <input className={s.component} required placeholder="Имя" onChange={(e) => this.setState({ name: e.target.value })} />
                     <input className={s.component} required placeholder="Отчество" onChange={(e) => this.setState({ patronymic: e.target.value })} />
-                    <input className={s.component} required placeholder="Логин" onChange={(e) => this.setState({ login: e.target.value })} />
                     <input className={s.component} required type="email" placeholder="Электронная почта" onChange={(e) => this.setState({ email: e.target.value })} />
                     <input className={s.component} required placeholder="Номер телефона" onChange={(e) => this.setState({ telephone: e.target.value })} />
                     <input className={s.component} required placeholder="Пароль" onChange={(e) => this.setState({ password: e.target.value })} />

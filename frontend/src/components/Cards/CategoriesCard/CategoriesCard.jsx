@@ -5,7 +5,7 @@ export const CategoriesCard = (props) => {
   return (
     <div className={s.wrapper}>
       <div style={{
-        backgroundImage: `url(${props.users.avatar})`,
+        backgroundImage: `url(${props.users.photo})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -13,7 +13,7 @@ export const CategoriesCard = (props) => {
         height: '100%',
         borderRadius: '8px',
       }} key={props.users.id}>
-        <NavLink to='/listperfomance' className={s.text}>{props.users.first_name}</NavLink>
+        <NavLink to='/listperfomance' className={s.text}>{props.users.name}</NavLink>
       </div>
     </div>
   );

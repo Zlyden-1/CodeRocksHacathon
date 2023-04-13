@@ -12,8 +12,12 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
             font-weight: 300;
-            border: 0;
-            background: #222;
+            border: none;
+            background: #FFA877;;
+            padding-left: 10px;
+            border-radius: 12px;
+            padding: 5px;
+            padding-left: 10px;
         }
         .input {
             font-family: 'Montserrat', sans-serif;
@@ -21,8 +25,10 @@
             font-weight: 300;
             border: 0;
             outline: none;
+            padding: 5px;
             background: #222;
-            color: white;
+            color: #FFA877;
+;
             border-radius: 8px;
             cursor: pointer;
             transition: color .2s;

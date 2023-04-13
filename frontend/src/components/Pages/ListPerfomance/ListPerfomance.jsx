@@ -18,6 +18,8 @@ export const ListPerfomance = () => {
             </div>
             <div className={s.cards}>
                 <PerfomanceCard />
+                <PerfomanceCard />
+                <PerfomanceCard />
             </div>
         </div>
     )

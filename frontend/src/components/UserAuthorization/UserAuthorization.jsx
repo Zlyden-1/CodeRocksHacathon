@@ -7,7 +7,7 @@ export class UserAuthorization extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            login: "",
+            email: "",
             password: "",
         };
     }
@@ -16,7 +16,7 @@ export class UserAuthorization extends React.Component {
         event.preventDefault();
 
         const data = {
-            login: this.state.login,
+            email: this.state.email,
             password: this.state.password,
         };
 
@@ -39,7 +39,7 @@ export class UserAuthorization extends React.Component {
                     <NavLink to='/reg'>Регистрация исполнителя</NavLink>
                 </div>
                 <form className={s.form} onSubmit={this.handleSubmit}>
-                    <input className={s.component} placeholder="Логин" onChange={(e) => this.setState({ login: e.target.value })} />
+                    <input className={s.component} placeholder="Email" onChange={(e) => this.setState({ email: e.target.value })} />
                     <input className={s.component} placeholder="Пароль" onChange={(e) => this.setState({ password: e.target.value })} />
                     <button style={{ marginTop: '20px' }} className={s.component} type="submit">Вход</button>
                 </form>
