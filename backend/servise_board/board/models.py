@@ -4,18 +4,19 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager, AbstractBaseUser
 
 
-# class User(AbstractUser):
-#     name = models.CharField(max_length=100, verbose_name='Имя')
-#     surname = models.CharField(max_length=100, verbose_name='Фамилия')
-#     patronimic = models.CharField(max_length=100, blank=True, null=True, verbose_name='Отчество')
-#     phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
-#     email = models.EmailField(verbose_name='Почта')
-#     about = models.TextField(blank=True, null=True, verbose_name='О себе')
-#     city = models.CharField(max_length=200, verbose_name='Город')
-#     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True, verbose_name='Фото')
-#
-#     class Meta:
-#         permissions = ()
+class User(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    surname = models.CharField(max_length=100, verbose_name='Фамилия')
+    patronimic = models.CharField(max_length=100, blank=True, null=True, verbose_name='Отчество')
+    phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
+    email = models.EmailField(verbose_name='Почта')
+    about = models.TextField(blank=True, null=True, verbose_name='О себе')
+    city = models.CharField(max_length=200, verbose_name='Город')
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True, verbose_name='Фото')
+    password = models.CharField(max_length=100, verbose_name='Пароль')
+
+    class Meta:
+        permissions = ()
 
 
 # class User(BaseUserManager):
@@ -84,19 +85,20 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager, AbstractBa
 #         return super().save(*args, **kwargs)
 
 
-# class Contractor(AbstractUser):
-#     categories = models.ManyToManyField(to='Category')
-#     name = models.CharField(max_length=100, verbose_name='Имя')
-#     surname = models.CharField(max_length=100, verbose_name='Фамилия')
-#     patronimic = models.CharField(max_length=100, blank=True, null=True, verbose_name='Отчество')
-#     phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
-#     email = models.EmailField(verbose_name='Почта')
-#     about = models.TextField(blank=True, null=True, verbose_name='О себе')
-#     city = models.CharField(max_length=200, verbose_name='Город')
-#     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True, verbose_name='Фото')
-#
-#     class Meta:
-#         permissions = ()
+class Contractor(models.Model):
+    categories = models.ManyToManyField(to='Category')
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    surname = models.CharField(max_length=100, verbose_name='Фамилия')
+    patronimic = models.CharField(max_length=100, blank=True, null=True, verbose_name='Отчество')
+    phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
+    email = models.EmailField(verbose_name='Почта')
+    about = models.TextField(blank=True, null=True, verbose_name='О себе')
+    city = models.CharField(max_length=200, verbose_name='Город')
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True, verbose_name='Фото')
+    password = models.CharField(max_length=100, verbose_name='Пароль')
+
+    class Meta:
+        permissions = ()
 
 
 class Category(models.Model):
@@ -125,10 +127,10 @@ class OrderStatus(models.Model):
 class Order(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
     detail = models.TextField(verbose_name='Описание')
-    #author = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='Заказчик')
+    author = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='Заказчик')
     status = models.ForeignKey(to=OrderStatus, on_delete=models.PROTECT, verbose_name='Статус')
-    #contractor = models.ForeignKey(to=Contractor, on_delete=models.PROTECT, blank=True, null=True,
-                                   #verbose_name='Исполнитель')
+    contractor = models.ForeignKey(to=Contractor, on_delete=models.PROTECT, blank=True, null=True,
+                                   verbose_name='Исполнитель')
 
     def delete(self, *args, **kwargs):
         for photo in self.orderphoto_set.all():
@@ -171,7 +173,7 @@ class UserReview(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
     detail = models.TextField(verbose_name='Описание')
     rate = models.IntegerField(choices=CHOICES, verbose_name='Оценка')
-    #user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='Пользователь')
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='Пользователь')
 
     def __str__(self):
         return self.title
