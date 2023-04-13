@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import s from './MainPage.module.scss'
 import { CategoriesCard } from "../../Cards/CategoriesCard/CategoriesCard";
 import axios from "axios";

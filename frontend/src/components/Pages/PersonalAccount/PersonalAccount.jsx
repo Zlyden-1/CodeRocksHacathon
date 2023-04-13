@@ -1,10 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import s from './PersonalAccount.module.scss'
-import { CategoriesCard } from "../../Cards/CategoriesCard/CategoriesCard";
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from 'react';
 import { AiFillStar } from 'react-icons/ai'
 import { SiGooglemaps } from 'react-icons/si'
 import { OrderCard } from "../../Cards/OrderCard/OrderCard";

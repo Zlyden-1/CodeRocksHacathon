@@ -84,34 +84,39 @@
         flex-direction: row;
         gap: 20px;
         flex-wrap: wrap;
+        background-color: #FFA877;
+        padding: 70px;
+        border-radius: 30px;
 
         .cardinfo1 {
             width: 300px;
-            height: 200px;
+            height: 250px;
             background-image: url('./images/1.png');
             background-size: cover;
-            background-color: #FFD4BB;
+            background-color: #FEFEFE;
             border-radius: 30px;
 
         }
 
         .cardinfo2 {
             width: 300px;
-            height: 200px;
+            height: 250px;
             background-image: url('./images/2.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            background-color: #FFD4BB;
+            background-color: #FEFEFE;
             border-radius: 30px;
         }
 
         .cardinfo3 {
             width: 300px;
-            height: 200px;
+            height: 250px;
             background-image: url('./images/3.png');
             background-size: cover;
-            background-color: #FFD4BB;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #FEFEFE;
             border-radius: 30px;
         }
 
