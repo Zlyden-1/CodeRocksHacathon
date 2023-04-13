@@ -115,3 +115,44 @@ class RegistrationContractorSerializer(serializers.ModelSerializer):
         contractor.save()
         return contractor
 
+
+class LoginUserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ['email', 'password']
+
+    def save(self, *args, **kwargs):
+        user = User(
+            email=self.validated_data['email', 'password'],
+        )
+        email = self.validated_data['email'],
+        password = self.validated_data['password']
+        if User.objects.get(email=email) != email:
+            raise serializers.ValidationError({password: "Логин не совпадает"})
+        if User.objects.get(password=password) != password:
+            raise serializers.ValidationError({password: "Пароль не совпадает"})
+        user.password = password
+        user.save()
+        return User
+
+
+class LoginContractorSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Contractor
+        fields = ['email', 'password']
+
+    def save(self, *args, **kwargs):
+        contractor = Contractor(
+            email=self.validated_data['email', 'password'],
+        )
+        email = self.validated_data['email'],
+        password = self.validated_data['password']
+        if Contractor.objects.get(email=email) != email:
+            raise serializers.ValidationError({password: "Логин не совпадает"})
+        if Contractor.objects.get(password=password) != password:
+            raise serializers.ValidationError({password: "Пароль не совпадает"})
+        contractor.password = password
+        contractor.save()
+        return contractor

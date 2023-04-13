@@ -113,7 +113,7 @@ class RegistrationContractorView(generics.CreateAPIView):
 
 
 @api_view(['POST'])
-def login_user_view(request):
+def register_user_view(request):
     if request.method == 'POST':
         surname = request.POST.get('surname')
         name = request.POST.get('name')
@@ -123,7 +123,7 @@ def login_user_view(request):
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
         user = authenticate(request, surname=surname, name=name, patronimic=patronimic, email=email,
-                            phone_numbe=phone_number, password=password, password2=password2)
+                            phone_number=phone_number, password=password, password2=password2)
         if user is not None:
             login(request, user)
             token, created = Token.objects.get_or_create(user=user)
@@ -132,7 +132,7 @@ def login_user_view(request):
             return JsonResponse({'error': 'Invalid credentials'})
 
 @api_view(['POST'])
-def login_contractor_view(request):
+def register_contractor_view(request):
     if request.method == 'POST':
         surname = request.POST.get('surname')
         name = request.POST.get('name')
@@ -142,7 +142,7 @@ def login_contractor_view(request):
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
         contractor = authenticate(request, surname=surname, name=name, patronimic=patronimic, email=email,
-                            phone_numbe=phone_number, password=password, password2=password2)
+                            phone_number=phone_number, password=password, password2=password2)
         if contractor is not None:
             login(request, contractor)
             token, created = Token.objects.get_or_create(contractor=contractor)
@@ -150,3 +150,36 @@ def login_contractor_view(request):
         else:
             return JsonResponse({'error': 'Invalid credentials'})
 
+
+# class LoginUserView(generics.CreateAPIView):
+#     queryset = User.objects.all()
+#     serializer_class = RegistrationUserSerializer
+#     permission_classes = [AllowAny]
+#
+#     def post(self, request, *args, **kwargs):
+#         serializer = RegistrationUserSerializer(data=request.data)
+#         data = {}
+#         if serializer.is_valid():
+#             serializer.save()
+#             data['response'] = True
+#             return Response(data, status=status.HTTP_200_OK)
+#         else:
+#             data = serializer.errors
+#             return Response(data)
+#
+#
+# class LoginContractorView(generics.CreateAPIView):
+#     queryset = Contractor.objects.all()
+#     serializer_class = RegistrationContractorSerializer
+#     permission_classes = [AllowAny]
+#
+#     def post(self, request, *args, **kwargs):
+#         serializer = RegistrationContractorSerializer(data=request.data)
+#         data = {}
+#         if serializer.is_valid():
+#             serializer.save()
+#             data['response'] = True
+#             return Response(data, status=status.HTTP_200_OK)
+#         else:
+#             data = serializer.errors
+#             return Response(data)
